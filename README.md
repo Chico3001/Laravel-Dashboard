@@ -1,6 +1,21 @@
-## About this project
+# About this project
 
 This is a Dashboard scatfold created using Laravel 9, AdminLTE and Jquery, made to simplify backend development, feel free to use it in your projects 
+
+## Instalation
+
+Clone (or Fork) this repo:
+```
+git clone https://github.com/Chico3001/Laravel-Dashboard My-Project
+```
+
+Install dependencies with composer update:
+```
+cd My-Project
+composer update
+```
+
+
 
 ## About Laravel
 
