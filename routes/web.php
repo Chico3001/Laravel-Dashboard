@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('login', 'login')->name('login')->middleware('guest');
+Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+
+// Add more public routes below...
+
+
+
+Route::middleware(['auth'])->group(function () {
+	Route::get('/', [DashboardController::class, 'index'])->name('index');
+	Route::get('home', [DashboardController::class, 'index'])->name('home');
+
+	Route::resource('user', UserController::class);
+
+	// Add more private routes below...
+
+
 });

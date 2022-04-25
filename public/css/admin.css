@@ -1,0 +1,73 @@
+@page {
+    size: letter portrait;
+}
+
+.brand-link .brand-image {
+    margin-left: 0.5rem;
+}
+
+.sticker {
+    margin: 0.3cm;
+    padding: 0.1cm 0;
+    float: left;
+    background-color: aquamarine;
+}
+
+.sticker-content {
+    margin: 0 auto;
+}
+
+.sticker-38x25 {
+    width: 38mm;
+    height: 25mm;
+}
+
+.tt-menu {
+    padding: 3%;
+    background-color: #fff;
+    border: 1px solid #80bdff;
+    border-radius: 0.25rem;
+}
+
+.tt-suggestion {
+    padding: 2% 0;
+}
+
+.tt-suggestion + .tt-suggestion {
+    border-top: 1px solid #80bdff;
+}
+
+.tt-suggestion.tt-cursor {
+    background-color: #80bdff;
+}
+
+#quality .input-group .input-group-text:first-child {
+    width: 22vw;
+}
+
+@media (min-width: 576px) {
+    #quality .input-group > .input-group-text:first-child {
+        width: 20vw;
+    }
+}
+
+@media (min-width: 768px) {
+    #quality .input-group > .input-group-text:first-child {
+        width: 14vw;
+    }
+}
+
+@media (min-width: 992px) {
+    #quality .input-group > .input-group-text:first-child {
+        width: 11vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    #quality .input-group > .input-group-text:first-child {
+        width: 9vw;
+    }
+}
+
+@media (min-width: 1400px) {
+}

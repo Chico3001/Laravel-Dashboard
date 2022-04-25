@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\UserCodes;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,8 +18,7 @@ class CreateUsersTable extends Migration
 		Schema::create('users', function (Blueprint $table) {
 			$table->id();
 			$table->string('user', 20)->unique();
-			$table->unsignedTinyInteger('status')->default(1);
-			// 0->disabled, 1->enabled, 2->suspended, 3->locked, 4->hidden
+			$table->unsignedTinyInteger('status')->default(UserCodes::ENABLED);	// See UserCodes Model
 			$table->string('name', 40);
 			$table->string('last1', 40);
 			$table->string('last2', 40)->nullable();

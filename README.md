@@ -1,6 +1,6 @@
 # About this project
 
-This is a Dashboard scatfold created using Laravel 9, AdminLTE and Jquery, made to simplify backend development, feel free to use it in your projects 
+This is a Dashboard scatfold created using Laravel 9, AdminLTE and jQuery, made to simplify backend development, feel free to use it in your projects 
 
 ## Instalation
 
@@ -9,13 +9,26 @@ Clone (or Fork) this repo:
 git clone https://github.com/Chico3001/Laravel-Dashboard My-Project
 ```
 
-Install dependencies with composer update:
+Install dependencies and required default files:
 ```
 cd My-Project
-composer update
+composer install
+copy .env.example .env
+php artisan key:generate
 ```
 
+Populate your .env file with the <a href="https://laravel.com/docs/9.x/configuration#environment-configuration">required configuration</a> of your application
 
+Add default users and options to UserSeeder and OptionSeeder
+
+Run Migration
+```
+php artisan migrate:fresh --seed
+```
+
+browse to your laravel site and enter with the credentials added on the UserSeeder
+
+Enjoy!!
 
 ## About Laravel
 
