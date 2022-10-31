@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
 			$table->timestamp('created_at')->useCurrent();
 			$table->timestamp('updated_at')->useCurrent();
 			$table->timestamp('email_verified_at')->nullable();
-			$table->json('extras')->nullable();
+			$table->mediumText('extras')->nullable();
 		});
 	}
 

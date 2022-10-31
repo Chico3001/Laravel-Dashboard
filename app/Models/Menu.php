@@ -17,16 +17,10 @@ class Menu
 			'icon' => 'fa-tachometer-alt',
 		);
 
-		// $items[] = (object)array(
-		// 	'name' => 'Usuarios',
-		// 	'link' => route('user.index'),
-		// 	'icon' => 'fa-users',
-		// );
-
 		$items[] = (object)array(
-			'name' => 'Perfil',
-			'link' => route('user.index'),
-			'icon' => 'fa-user',
+			'name' => 'Usuarios',
+			'link' => route('users.index'),
+			'icon' => 'fa-address-card',
 		);
 
 		// $items[] = (object)array(

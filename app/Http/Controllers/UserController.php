@@ -17,9 +17,9 @@ class UserController extends Controller
 	 */
 	public function index()
 	{
-		return view('user', [
-			'menu' => Menu::generate(['active' => 'Usuario']),
-			'user' => Auth::user(),
+		return view('users', [
+			'menu' => Menu::generate(['active' => 'Usuarios']),
+			'users' => User::all(),
 		]);
 	}
 
@@ -63,7 +63,7 @@ class UserController extends Controller
 	 */
 	public function edit(User $user)
 	{
-		die("edit");
+		return $user;
 	}
 
 	/**

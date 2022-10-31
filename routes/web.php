@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('/', [DashboardController::class, 'index'])->name('index');
 	Route::get('home', [DashboardController::class, 'index'])->name('home');
 
-	Route::resource('user', UserController::class);
+	Route::resource('users', UserController::class);
 
 	// Add more private routes below...
 
