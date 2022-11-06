@@ -8,25 +8,25 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Public Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
+Route::view('/', 'front.index')->name('index');
 
-Route::view('login', 'login')->name('login')->middleware('guest');
+Route::view('login', 'front.login')->name('login')->middleware('guest');
 Route::post('login', [LoginController::class, 'login'])->name('login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 // Add more public routes below...
 
 
-
+/*
+|--------------------------------------------------------------------------
+| Private Routes
+|--------------------------------------------------------------------------
+*/
 Route::middleware(['auth'])->group(function () {
-	Route::get('/', [DashboardController::class, 'index'])->name('index');
+	// Route::get('/', [DashboardController::class, 'index'])->name('index');
 	Route::get('home', [DashboardController::class, 'index'])->name('home');
 
 	Route::resource('users', UserController::class);

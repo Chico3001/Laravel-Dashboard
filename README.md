@@ -12,8 +12,8 @@ git clone https://github.com/Chico3001/Laravel-Dashboard My-Project
 Install dependencies and required default files:
 ```
 cd My-Project
-composer install
 copy .env.example .env
+composer install
 php artisan key:generate
 ```
 

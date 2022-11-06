@@ -17,7 +17,7 @@ class UserController extends Controller
 	 */
 	public function index()
 	{
-		return view('users', [
+		return view('back.users', [
 			'menu' => Menu::generate(['active' => 'Usuarios']),
 			'users' => User::all(),
 		]);
@@ -41,7 +41,23 @@ class UserController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		dd($request);
+		if (User::where('name', $request->input('name'))->exists()) {
+			// Usuario ya existe
+			return response()->json([
+				'success' => 'error',
+				'msg' => 'El nombre del usuario ya existe',
+			], 200);
+		} else {
+			// Crea usuario
+			$user = new User();
+			$user->fill($request->all());
+			$user->save();
+
+			return response()->json([
+				'success' => 'ok',
+				'msg' => 'Usuario agregado con exito',
+			], 200);
+		}
 	}
 
 	/**
@@ -75,10 +91,12 @@ class UserController extends Controller
 	 */
 	public function update(Request $request, User $user)
 	{
-		$user->fill($request->all());
-		$user->save();
+		$user->delete();
 
-		return redirect()->back()->with('toastr-success', "Usuario actualizado");
+		return response()->json([
+			'success' => 'ok',
+			'msg' => 'Usuario borrado con exito',
+		], 200);
 	}
 
 	/**

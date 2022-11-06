@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,9 @@ class User extends Authenticatable
 	 *
 	 * @var string[]
 	 */
-	protected $fillable = ['user', 'status', 'name', 'last1', 'last2', 'email', 'level', 'group', 'image', 'password',];
+	protected $fillable = ['user', 'status', 'name', 'last1', 'last2', 'email', 'level', 'group', 'image', 'password'];
+
+	// TODO: agregar campos json
 
 	/**
 	 * The attributes that should be hidden for serialization.

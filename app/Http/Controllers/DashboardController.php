@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Audit;
 use App\Models\Menu;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -14,8 +15,9 @@ class DashboardController extends Controller
 	 */
 	public function index()
 	{
-		return view('dashboard', [
+		return view('back.dashboard', [
 			'menu' => Menu::generate(['active' => 'Dashboard']),
+			'total_users' => User::all()->count(),
 		]);
 	}
 
